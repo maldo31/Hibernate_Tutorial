@@ -1,22 +1,20 @@
 package com.luv2code.hibernate.demo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="student")
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name="last_ame")
+    @Column(name="last_name")
     private String lastName;
 
     @Column(name = "email")
